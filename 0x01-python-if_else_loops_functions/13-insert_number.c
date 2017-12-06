@@ -3,10 +3,16 @@
 #include <stdio.h>
 #include "lists.h"
 
+/**
+  * insert_node - inserts node in a sorted linked list
+  * @head: double pointer to the beginning of the linked list
+  * @number: number to be placed in new node
+  * Return: Address of the new node or NULL if failed
+  */
+
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *current;
-	listint_t *forward;
+	listint_t *compare;
 	listint_t *newnode;
 
 	if (head == NULL)
@@ -15,30 +21,22 @@ listint_t *insert_node(listint_t **head, int number)
 	if (newnode == NULL)
 		return (NULL);
 	newnode->n = number;
-	if (*head == NULL)
+	compare = *head;
+	if (*head == NULL || newnode->n < compare->n)
 	{
+		newnode->next = *head;
 		*head = newnode;
-		newnode->next = NULL;
-		return (newnode);
 	}
-	current = *head;
-	if (newnode->n < current->n)
+	else
 	{
-		newnode->next = current;
-		*head = newnode;
-		return (newnode);
-	}
-	do {
-		forward = current->next;
-		if (newnode->n < forward->n)
+		while (compare->next != NULL)
 		{
-			newnode->next = forward;
-			current->next = newnode;
-			return (newnode);
+			if (compare->next->n > newnode->n)
+				break;
+			compare = compare->next;
 		}
-		current = current->next;
-	} while (forward != NULL);
-	newnode->next = NULL;
-	current->next = newnode;
+		newnode = compare->next;
+		compare->next = newnode;
+	}
 	return (newnode);
 }
