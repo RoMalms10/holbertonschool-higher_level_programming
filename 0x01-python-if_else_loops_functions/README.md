@@ -18,4 +18,5 @@
 | 13-insert\_number.c | C function that inserts a number into a sorted singly linked list |
 | 100-print\_tebahpla.py | Program that prints the alphabet in reverse order, alternating lowercase and uppercase (z lowercase, Y uppercase), followed by a new line |
 | 101-remove\_char\_at.py | Function that creates a copy of the string, removing the character at the position n |
+| linked\_lists.c | Necessary file for file 13 |
 | lists.h | Header file necessary for file 13 |
