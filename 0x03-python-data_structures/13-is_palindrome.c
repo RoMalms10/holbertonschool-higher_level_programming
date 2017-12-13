@@ -34,7 +34,6 @@ int is_palindrome(listint_t **head)
 	while (lower != NULL)
 	{
 		reverse = *head;
-		printf("Upper is: %d and Lower is: %d\n", upper->n, lower->n);
 		if (lower->n != upper->n)
 			return (0);
 		while (reverse->next != upper && upper != *head)
