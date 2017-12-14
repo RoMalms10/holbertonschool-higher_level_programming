@@ -16,6 +16,8 @@ int is_palindrome(listint_t **head)
 	length = *head;
 	for (count = 0; length != NULL; count++)
 		length = length->next;
+	if (count == 1)
+		return (1); /*List of 1 is palindrome*/
 	reversed_head = reverse_list(*head, count);
 	if (is_pal(*head, reversed_head) == 1)
 		return (1);
@@ -42,7 +44,7 @@ listint_t *reverse_list(listint_t *head, unsigned int count)
 	upper = head;
 	for (; count > 0; count--)
 		upper = upper->next;
-	middle = upper->next; /*outside of next loop because need to make NULL*/
+	middle = upper->next; /*before next loop because need to make NULL*/
 	lower = middle->next;
 	upper->next = NULL;
 	middle->next = NULL;
