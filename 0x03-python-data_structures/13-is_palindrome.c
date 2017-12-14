@@ -26,10 +26,10 @@ int is_palindrome(listint_t **head)
 }
 
 /**
-  *
-  *
-  *
-  *
+  * reverse_list - reverses the last half of a linked list
+  * @head: the pointer to the beginning of the list
+  * @count: how big the list is
+  * Return: the beginning of the newly reversed last half of the list
   */
 listint_t *reverse_list(listint_t *head, unsigned int count)
 {
@@ -61,9 +61,10 @@ listint_t *reverse_list(listint_t *head, unsigned int count)
 }
 
 /**
-  *
-  *
-  *
+  * is_pal - checks if a list is a palindrome
+  * @head: the beginning of the first half of the list
+  * @reversed_head: the beginning of the reversed list
+  * Return: 1 if palindrome, 0 if not
   */
 int is_pal(listint_t *head, listint_t *reversed_head)
 {
