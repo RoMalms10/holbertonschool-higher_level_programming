@@ -7,39 +7,70 @@
   */
 int is_palindrome(listint_t **head)
 {
-	listint_t *upper;
-	listint_t *lower;
-	listint_t *reverse;
-	int count;
-	int i;
-	int move;
+	listint_t *length;
+	listint_t *reversed_head;
+	unsigned int count;
 
 	if (head == NULL || *head == NULL)
 		return (0);
-	reverse = *head;
-	for (count = 1; reverse->next != NULL; count++)
-		reverse = reverse->next;
-	upper = lower = *head;
-	if (count % 2 == 0)
-		move = (count / 2) - 1;
+	length = *head;
+	for (count = 0; length != NULL; count++)
+		length = length->next;
+	reversed_head = reverse_list(*head, count);
+	if (is_pal(*head, reversed_head) == 1)
+		return (1);
 	else
-		move = count / 2;
-	for (i = 0; i < move; i++)
-	{
+		return (0);
+}
+
+/**
+  *
+  *
+  *
+  *
+  */
+listint_t *reverse_list(listint_t *head, unsigned int count)
+{
+	listint_t *upper;
+	listint_t *middle;
+	listint_t *lower;
+
+	if (count % 2 == 0)
+		count = (count / 2) - 1;
+	else
+		count = count / 2;
+	upper = head;
+	for (; count > 0; count--)
 		upper = upper->next;
-		if (i == 0 && count % 2 == 0)
-			lower = lower->next; /*needs to move 1 extra time*/
-		lower = lower->next;
-	}
-	while (lower != NULL)
+	middle = upper->next; /*outside of next loop because need to make NULL*/
+	lower = middle->next;
+	upper->next = NULL;
+	middle->next = NULL;
+	upper = middle;
+	middle = lower;
+	while (middle != NULL)
 	{
-		reverse = *head;
-		if (lower->n != upper->n)
-			return (0);
-		while (reverse->next != upper && upper != *head)
-			reverse = reverse->next;
-		upper = reverse;
 		lower = lower->next;
+		middle->next = upper;
+		upper = middle;
+		middle = lower;
+	}
+	return (upper);
+}
+
+/**
+  *
+  *
+  *
+  */
+int is_pal(listint_t *head, listint_t *reversed_head)
+{
+	while (reversed_head != NULL)
+	{
+		if (head->n != reversed_head->n)
+			return (0);
+		head = head->next;
+		reversed_head = reversed_head->next;
 	}
 	return (1);
 }
