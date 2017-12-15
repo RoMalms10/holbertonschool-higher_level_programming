@@ -3,7 +3,7 @@ def roman_to_int(roman_string):
     if not roman_string or type(roman_string) != str:
         return 0
     my_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-                 'C': 100, 'D': 500, 'M': 1000}
+               'C': 100, 'D': 500, 'M': 1000}
     roman_sum = 0
     for numer in roman_string:
         if numer in my_dict:
