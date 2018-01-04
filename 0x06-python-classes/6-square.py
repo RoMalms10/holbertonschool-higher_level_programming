@@ -9,21 +9,8 @@ class Square:
                 tuple 1: how many spaces to print before the square
                 tuple 2: how many new lines to print before the square
         """
-        if type(size) != int:
-            print("size must be an integer", end="")
-            raise TypeError
-        elif size < 0:
-            print("size must be >= 0", end="")
-            raise ValueError
-        elif type(position[0]) != int or type(position[1]) != int:
-            print("position must be a tuple of 2 positive integers")
-            raise TypeError
-        elif position[0] < 0 or position[1] < 0:
-            print("position must be a tuple of 2 positive integers")
-            raise TypeError
-        else:
-            self.__size = size
-            self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
