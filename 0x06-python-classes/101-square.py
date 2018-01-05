@@ -77,6 +77,8 @@ class Square:
         """ Prints the square when prints is called on this class
         """
         new_str = ""
+        if self.__size == 0:
+            return "\n"
         for new_line in range(self.__position[1]):
             new_str += "\n"
         for index in range(self.__size):
@@ -84,6 +86,4 @@ class Square:
             new_str += "#"*self.__size
             if index != self.__size - 1:
                 new_str += "\n"
-        if new_str == "":
-            new_str += "\n"
         return new_str
