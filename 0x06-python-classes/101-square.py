@@ -84,4 +84,6 @@ class Square:
             new_str += "#"*self.__size
             if index != self.__size - 1:
                 new_str += "\n"
+        if new_str == "":
+            new_str += "\n"
         return new_str
