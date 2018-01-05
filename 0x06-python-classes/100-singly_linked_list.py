@@ -26,7 +26,7 @@ class Node:
     def data(self, value):
         """ Setter - Sets the value for data
         """
-        if not isinstance(value, int) and value != None:
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
@@ -55,7 +55,7 @@ class SinglyLinkedList:
     def __init__(self):
         """Initializes head to nothing
         """
-        self.__head = Node(None, None)
+        self.__head = None
 
     def __str__(self):
         """prints the list when print is used on the class
@@ -81,11 +81,14 @@ class SinglyLinkedList:
         """
         self.new_node = Node(value, None)
         temp = self.__head
-        if self.__head.data == None:
-           self.__head = Node(value, None)
+        # Checks if there is no list
+        if self.__head == None:
+           self.__head = self.new_node
+        # Checks if the first value is bigger than the new node value
         elif temp.data > value:
             self.new_node.next_node = self.__head
             self.__head = self.new_node
+        # Goes through the list to see where to add the new node
         else:
             while temp.next_node != None:
                 if temp.next_node.data > value:
