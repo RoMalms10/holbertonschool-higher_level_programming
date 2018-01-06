@@ -12,8 +12,12 @@
 **/*~
 **/\#*
 
+# Ignore __pycache__
+**pycache*
+
 # Ignore main files
 **/*main.c
+**/*main.py
 
 # Ignore object files and libraries
 *.o
