@@ -1,0 +1,58 @@
+The ``Text Indentation`` Module
+===============================
+
+Using ``text_indentation``
+--------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
+
+>>> text_indentation("I.?: Am.? Glad.")
+I.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+Am.
+<BLANKLINE>
+?
+<BLANKLINE>
+Glad.
+<BLANKLINE>
+
+>>> text_indentation(24)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(("HELLO", "HI"))
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(["HELLO", "HI"])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(["Hello"])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation({"Hi": "Hello"})
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("Hello")
+Hello
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
