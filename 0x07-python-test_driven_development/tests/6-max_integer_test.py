@@ -44,5 +44,10 @@ class TestMaxInteger(unittest.TestCase):
         """
         self.assertEquals(max_integer([4, 3, 2, 1]), 4)
 
+    def test_list_with_one_element(self):
+        """Test with a list that only has 1 element
+        """
+        self.assertEqual(max_integer([1]), 1)
+
 if __name__ == '__main__':
     unittest.main()
