@@ -15,12 +15,11 @@ def matrix_divided(matrix, div):
         err_3 (str): error message 3
         err_4 (str): error message 4
     """
-    
+
     err_1 = "matrix must be a matrix (list of lists) of integers/floats"
     err_2 = "Each row of the matrix must have the same size"
     err_3 = "div must be a number"
     err_4 = "division by zero"
-
 
     # Checks if matrix is a list
     if not isinstance(matrix, list):
