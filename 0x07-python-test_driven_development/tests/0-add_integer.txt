@@ -6,55 +6,74 @@ Using ``add_integer``
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(1, 2)
-3
+# check for correct output
+	>>> add_integer(1, 2)
+	3
 
->>> add_integer(100, -2)
-98
+# Check for correct output
+	>>> add_integer(100, -2)
+	98
 
->>> add_integer(100.3, -2)
-98
+# Check for correct output
+	>>> add_integer(100.3, -2)
+	98
 
->>> add_integer(-2, 100.3)
-98
+# Check for correct output
+	>>> add_integer(-2, 100.3)
+	98
 
->>> add_integer(4, "School")
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
+# Check for non-integer in b
+	>>> add_integer(4, "School")
+	Traceback (most recent call last):
+	    ...
+	TypeError: b must be an integer
 
->>> add_integer("School", 4)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+# Check for non-integer in a
+	>>> add_integer("School", 4)
+	Traceback (most recent call last):
+	    ...
+	TypeError: a must be an integer
 
->>> add_integer((0, 0), 4)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
+# Check for non-integer in a
+	>>> add_integer((0, 0), 4)
+	Traceback (most recent call last):
+	    ...
+	TypeError: a must be an integer
 
->>> add_integer(4, [10, 5])
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
+# Check for non-integer in b
+	>>> add_integer(4, [10, 5])
+	Traceback (most recent call last):
+	    ...
+	TypeError: b must be an integer
 
->>> add_integer(1)
-Traceback (most recent call last):
-    ...
-TypeError: add_integer() missing 1 required positional argument: 'b'
+# Check for missing 1 argument
+	>>> add_integer(1)
+	Traceback (most recent call last):
+	    ...
+	TypeError: add_integer() missing 1 required positional argument: 'b'
 
->>> add_integer()
-Traceback (most recent call last):
-    ...
-TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+# Check for 2 missing arguments
+	>>> add_integer()
+	Traceback (most recent call last):
+	    ...
+	TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
->>> add_integer(3.0, 2)
-5
+# Check for floating point in a
+	>>> add_integer(3.0, 2)
+	5
 
->>> add_integer(2, 3.0)
-5
+# Check for floating point in b
+	>>> add_integer(2, 3.0)
+	5
 
->>> add_integer(float('nan'), 5)
-Traceback (most recent call last):
-    ...
-ValueError: cannot convert float NaN to integer
+# Check for NaN error
+	>>> add_integer(float('nan'), 5)
+	Traceback (most recent call last):
+	    ...
+	ValueError: cannot convert float NaN to integer
+
+# Check for floating point OverFlow
+	>>> add_integer(1, float('inf'))
+	Traceback (most recent call last):
+	    ...
+	OverflowError: cannot convert float infinity to integer
