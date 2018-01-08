@@ -20,5 +20,7 @@ def text_indentation(text):
             print(new_str.strip(" "))
             new_str = ""
     if letter not in ch:
-        if new_str not in [" "]:
+        if len(new_str) != 0:
+            while new_str[0] == " ":
+                new_str = new_str[1:]
             print(new_str.strip(" "))
