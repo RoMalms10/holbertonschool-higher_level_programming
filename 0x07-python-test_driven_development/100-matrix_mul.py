@@ -51,9 +51,6 @@ def matrix_mul(m_a, m_b):
     rowlen_a = len(m_a[0])
     rowlen_b = len(m_b[0])
 
-    if len(m_a[0]) != len(m_b):
-        raise ValueError(err_5)
-
     # Checks m_a for errors
     for row in m_a:
         if not isinstance(row, list):
@@ -74,6 +71,8 @@ def matrix_mul(m_a, m_b):
                 if not isinstance(num, (int, float)):
                     raise TypeError(err_2b)
 
+    if len(m_a[0]) != len(m_b):
+        raise ValueError(err_5)
 
     new = [[0 for _ in range(len(m_b[0]))] for i in range(len(m_a))]
 
