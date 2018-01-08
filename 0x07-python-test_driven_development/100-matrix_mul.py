@@ -35,6 +35,7 @@ def matrix_mul(m_a, m_b):
     err_4b = "m_b can't be empty"
     err_5 = "m_a and m_b can't be multiplied"
 
+    # Checks if types are correct
     if type(m_a) != list:
         raise TypeError(err_1a)
     if type(m_b) != list:
@@ -71,6 +72,7 @@ def matrix_mul(m_a, m_b):
                 if not isinstance(num, (int, float)):
                     raise TypeError(err_2b)
 
+    # Checks if row of m_a is the same as columns of b
     if len(m_a[0]) != len(m_b):
         raise ValueError(err_5)
 
