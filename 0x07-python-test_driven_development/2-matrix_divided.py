@@ -43,11 +43,11 @@ def matrix_divided(matrix, div):
 
         # Checks if the elements in the matrix are int or float
         for elmnt in mtx:
-            if not isinstance(elmnt, int) and not isinstance(elmnt, float):
+            if not isinstance(elmnt, (int, float)):
                 raise TypeError(err_1)
 
     # Checks if div is a number
-    if not isinstance(div, int) and not isinstance(div, float):
+    if not isinstance(div, (int, float)):
         raise TypeError(err_3)
 
     # Checks if div is 0
