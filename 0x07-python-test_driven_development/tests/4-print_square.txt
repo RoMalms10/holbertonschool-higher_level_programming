@@ -42,3 +42,9 @@ Using ``print_square``
 	Traceback (most recent call last):
 	    ...
 	NameError: name 'K' is not defined
+
+# Check for missing argument
+	>>> print_square() #doctest: +IGNORE_EXCEPTION_DETAIL
+	Traceback (most recent call last):
+	    ...
+	TypeError:
