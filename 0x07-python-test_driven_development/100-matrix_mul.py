@@ -72,7 +72,7 @@ def matrix_mul(m_a, m_b):
                 if not isinstance(num, (int, float)):
                     raise TypeError(err_2b)
 
-    # Checks if row of m_a is the same as columns of b
+    # Checks if row of m_a is the same as columns of m_b
     if len(m_a[0]) != len(m_b):
         raise ValueError(err_5)
 
