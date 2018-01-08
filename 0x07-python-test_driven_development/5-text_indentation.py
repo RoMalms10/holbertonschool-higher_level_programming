@@ -20,4 +20,4 @@ def text_indentation(text):
             print(new_str.strip(" "))
             new_str = ""
     if letter not in ch:
-        print(new_str.strip(" "))
+        print(new_str.strip(" "), end="")
