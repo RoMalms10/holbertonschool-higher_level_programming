@@ -20,7 +20,6 @@ Using ``print_square``
 
 # Check for 0 size square
 	>>> print_square(0)
-	<BLANKLINE>
 
 # Check for size of 1 square
 	>>> print_square(1)
