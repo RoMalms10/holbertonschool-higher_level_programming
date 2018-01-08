@@ -5,6 +5,7 @@ add_integer: adds two integers together
 
 """
 
+
 def add_integer(a, b):
     """Returns a + b
     Args: a and b (int): the numbers to add
