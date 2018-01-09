@@ -6,7 +6,7 @@
 class Rectangle:
     """Class for rectangles
     """
-    
+
     def __init__(self, width=0, height=0):
         """Calls getter and setters to initialize values
         Args:
@@ -17,7 +17,7 @@ class Rectangle:
         self.height = height
 
     def __repr__(self):
-        """Returns a string containing information about the rectangle 
+        """Returns a string containing information about the rectangle
         """
         return "Rectangle({}, {})".format(self.width, self.height)
 

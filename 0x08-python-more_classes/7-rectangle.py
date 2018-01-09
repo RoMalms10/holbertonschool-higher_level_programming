@@ -9,10 +9,10 @@ class Rectangle:
         number_of_instances (int): counts how many instances of rectangle
         print_symbol (str): the character to use when printing out rectangle
     """
-    
+
     number_of_instances = 0
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         """Calls getter and setters to initialize values
            also increases the number of instances
@@ -48,7 +48,7 @@ class Rectangle:
         """Prints a statement when an instance is deleted
            and decreases the number of instances
         """
-        Rectangle.number_of_instances -= 1 
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle…")
 
     def area(self):

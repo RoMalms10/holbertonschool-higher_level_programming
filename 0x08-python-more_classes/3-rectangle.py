@@ -6,7 +6,7 @@
 class Rectangle:
     """Class for rectangles
     """
-    
+
     def __init__(self, width=0, height=0):
         """Calls getter and setters to initialize values
         Args:
