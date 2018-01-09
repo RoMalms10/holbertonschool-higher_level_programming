@@ -17,7 +17,7 @@ class Rectangle:
         self.height = height
 
     def __repr__(self):
-        """
+        """Returns a string containing information about the rectangle 
         """
         return "Rectangle({}, {})".format(self.width, self.height)
 
