@@ -38,7 +38,7 @@ class Rectangle:
     def __del__(self):
         """Prints a statement when an instance is deleted
         """
-        print("Bye rectangle…")
+        print("Bye rectangle...")
 
     def area(self):
         """Returns the area of the rectangle

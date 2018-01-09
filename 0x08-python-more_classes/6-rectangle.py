@@ -49,7 +49,7 @@ class Rectangle:
            and decreases the number of instances
         """
         Rectangle.number_of_instances -= 1
-        print("Bye rectangle…")
+        print("Bye rectangle...")
 
     def area(self):
         """Returns the area of the rectangle
