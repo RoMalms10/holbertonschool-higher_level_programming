@@ -10,5 +10,5 @@ def write_file(filename="", text=""):
         filename (str): the file to append to
         text (str): the text to append
     """
-    with open(filename, mode='a', encoding="UTF=8") as f:
+    with open(filename, mode='w', encoding="UTF=8") as f:
         return(f.write(text))
