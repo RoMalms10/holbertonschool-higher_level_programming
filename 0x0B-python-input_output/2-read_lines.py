@@ -13,17 +13,8 @@ def read_lines(filename="", nb_lines=0):
     linecount = 0
     with open(filename, encoding="UTF-8") as f:
         for line in f:
+            if nb_lines == linecount and nb_lines > 0:
+                break
+            else:
+                print(line, end="")
             linecount += 1
-
-        # reset to the beginning of the file
-        f.seek(0)
-
-        if 0 < nb_lines < linecount:
-            for line in f:
-                if (nb_lines == 0):
-                    break
-                print(line, end="")
-                nb_lines -= 1
-        else:
-            for line in f:
-                print(line, end="")
