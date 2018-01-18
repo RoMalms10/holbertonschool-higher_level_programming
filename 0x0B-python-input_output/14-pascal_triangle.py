@@ -11,6 +11,8 @@ def pascal_triangle(n):
     """
     pascal = [[] for _ in range(n)]
 
+    if n <= 0:
+        return []
     pascal[0].append(1)
     for row in range(1, n):
         try:
