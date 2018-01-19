@@ -53,3 +53,33 @@ Using ``integer_validator``
 	Traceback (most recent call last):
 		...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+# Test with Tuple as second argument
+	>>> bg.integer_validator("age", (4,))
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+# Test with list as second argument
+	>>> bg.integer_validator("age", [3])
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+# Test with boolean as second argument
+	>>> bg.integer_validator("age", True)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+# Test with dict as second argument
+	>>> bg.integer_validator("age", {3, 4})
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
+
+# Test with None as second argument
+	>>> bg.integer_validator("age", None)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
