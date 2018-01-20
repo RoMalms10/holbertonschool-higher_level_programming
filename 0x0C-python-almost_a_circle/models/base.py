@@ -7,11 +7,9 @@ class Base:
     """ A class that will be used as a base for all other classes
 
     Attributes:
-        id (public): id of the instance
         __nb_objects (private): the number of objects
     """
 
-    id = 0
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -26,5 +24,5 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            self.__nb_objects += 1
-            self.id = __nb_objects
+            type(self).__nb_objects += 1
+            self.id = Base.__nb_objects
