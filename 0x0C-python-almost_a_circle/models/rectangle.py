@@ -25,6 +25,42 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        """ Returns the informal representation of the Rectangle
+        """
+
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
+
+
+    def update(self, *args):
+        """ Updates attributes of the Rectangle
+
+        Args:
+            args (non-keyword arguments): non-specified amount of arguments
+        """
+        
+        attrs = ["id", "width", "height", "x", "y"]
+        position = 0
+
+        for var in args:
+            setattr(self, attrs[position], var)
+            position += 1
+
+    def area(self):
+        """ Returns the area of the rectangle
+        """
+
+        return self.width * self.height
+
+    def display(self):
+        """ Prints the rectangle with #'s
+        """
+
+        print("\n"*self.y, end="")
+        for row2 in range(self.height):
+            print(" "*self.x + "#"*self.width)
+
     @staticmethod
     def integer_validator(var_name, value):
         """ Validates and handles all error messages
