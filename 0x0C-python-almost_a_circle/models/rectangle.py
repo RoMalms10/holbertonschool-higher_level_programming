@@ -33,7 +33,7 @@ class Rectangle(Base):
                                                        self.width, self.height)
 
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Updates attributes of the Rectangle
 
         Args:
@@ -46,6 +46,10 @@ class Rectangle(Base):
         for var in args:
             setattr(self, attrs[position], var)
             position += 1
+
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def area(self):
         """ Returns the area of the rectangle
