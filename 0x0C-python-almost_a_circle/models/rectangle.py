@@ -38,14 +38,13 @@ class Rectangle(Base):
 
         Args:
             args (non-keyword arguments): non-specified amount of arguments
+            kwargs (key-word arguments): non-specified amount of arguments
         """
         
         attrs = ["id", "width", "height", "x", "y"]
-        position = 0
 
-        for var in args:
+        for position, var in enumerate(args):
             setattr(self, attrs[position], var)
-            position += 1
 
         if len(args) == 0:
             for key, value in kwargs.items():
@@ -64,6 +63,18 @@ class Rectangle(Base):
         print("\n"*self.y, end="")
         for row2 in range(self.height):
             print(" "*self.x + "#"*self.width)
+
+    def to_dictionary(self):
+        """ Returns the dictionary representation of the instance
+        """
+
+        new_dict = {}
+        attrs = ["id", "width", "height", "x", "y"]
+
+        for att in attrs:
+            new_dict[att] = getattr(self, att)
+
+        return new_dict
 
     @staticmethod
     def integer_validator(var_name, value):
