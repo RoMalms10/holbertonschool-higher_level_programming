@@ -15,6 +15,9 @@
 # Ignore __pycache__
 **pycache*
 
+# Ignore .pyc files
+**.pyc
+
 # Ignore main files
 **/*main.c
 **/*main.py
