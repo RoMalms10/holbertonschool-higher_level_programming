@@ -338,3 +338,309 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(capturedOutput.getvalue(), display) #use .getvalue
 
         sys.stdout = sys.__stdout__ #Reset redirect
+
+    def test_dunder_str(self):
+        """ Test if __str__ is returning the correct string
+        """
+
+        mssg = "[Rectangle] (20) 1/0 - 3/4\n"
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Rectangle(3, 4, 1, 0, 20)
+        print(r1)
+
+        self.assertEqual(capturedOutput.getvalue(), mssg)
+
+        sys.stdout = sys.__stdout__
+
+    def test_display_number_one(self):
+        """ Test if display of rectangle with x and y is correct
+        """
+
+        display = "\n\n  #\n  #\n"
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Rectangle(1, 2, 2, 2)
+
+        r1.display()
+
+        self.assertEqual(capturedOutput.getvalue(), display)
+
+        sys.stdout = sys.__stdout__
+
+    def test_display_number_one_larger(self):
+        """ Test if a larger display works 
+        """
+
+        display = " ####\n ####\n ####\n"
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Rectangle(4, 3, 1, 0)
+
+        r1.display()
+
+        self.assertEqual(capturedOutput.getvalue(), display)
+
+        sys.stdout = sys.__stdout__
+
+    def test_update_with_one_argument(self):
+        """ Test the update method with 1 argument
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        self.assertEqual(r1.id, 10)
+
+        r1.update(89)
+
+        self.assertEqual(r1.id, 89)
+
+    def test_update_with_two_arguments(self):
+        """ Test the update method with 2 arguments
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        self.assertEqual(r1.id, 10)
+        self.assertEqual(r1.width, 10)
+
+        r1.update(89, 2)
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+
+    def test_update_with_three_arguments(self):
+        """ Test the update method with 3 arguments
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        self.assertEqual(r1.id, 10)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 10)
+
+        r1.update(89, 2, 3)
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+
+    def test_update_with_four_arguments(self):
+        """ Test the update method with 4 arguments
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        self.assertEqual(r1.id, 10)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+
+        r1.update(89, 2, 3, 4)
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+
+    def test_update_with_five_arguments(self):
+        """ Test the update method with 5 arguments
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        self.assertEqual(r1.id, 10)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+
+        r1.update(89, 2, 3, 4, 5)
+
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 5)
+
+    def test_update_with_kwargs_id(self):
+        """ Test if only kwargs and id works
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(id=50)
+
+        self.assertEqual(r1.id, 50)
+
+    def test_update_with_kwargs_width(self):
+        """ Test if only kwargs and width works
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(width=20)
+
+        self.assertEqual(r1.width, 20)
+
+    def test_update_with_kwargs_height(self):
+        """ Test if only kwargs and height works
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(height=20)
+
+        self.assertEqual(r1.height, 20)
+
+    def test_update_with_kwargs_x(self):
+        """ Test if only kwargs and x works
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(x=20)
+
+        self.assertEqual(r1.x, 20)
+
+    def test_update_with_kwargs_y(self):
+        """ Test if only kwargs and y works
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(y=20)
+
+        self.assertEqual(r1.y, 20)
+
+    def test_update_with_two_kwargs(self):
+        """ Test if 2 kwargs are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(id=900, width=30)
+
+        self.assertEqual(r1.id, 900)
+        self.assertEqual(r1.width, 30)
+
+
+    def test_update_with_three_kwargs(self):
+        """ Test if 3 kwargs are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(id=900, width=30, height=60)
+
+        self.assertEqual(r1.id, 900)
+        self.assertEqual(r1.width, 30)
+        self.assertEqual(r1.height, 60)
+
+    def test_update_with_two_kwargs(self):
+        """ Test if 2 kwargs are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(id=900, width=30, height=60, x=2)
+
+        self.assertEqual(r1.id, 900)
+        self.assertEqual(r1.width, 30)
+        self.assertEqual(r1.height, 60)
+        self.assertEqual(r1.x, 2)
+
+    def test_update_with_two_kwargs(self):
+        """ Test if 2 kwargs are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(id=900, width=30, height=60, x=2, y=3)
+
+        self.assertEqual(r1.id, 900)
+        self.assertEqual(r1.width, 30)
+        self.assertEqual(r1.height, 60)
+        self.assertEqual(r1.x, 2)
+        self.assertEqual(r1.y, 3)
+
+    def test_update_with_one_args_and_kwargs(self):
+        """ Test when args AND kwargs are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(30, id=70)
+
+        self.assertEqual(r1.id, 30)
+
+    def test_with_two_args_and_kwargs(self):
+        """ Test with multiple args and one kwarg
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(40, 20, id=80)
+
+        self.assertEqual(r1.id, 40)
+        self.assertEqual(r1.width, 20)
+
+    def test_with_three_args_and_kwargs(self):
+        """ Test with multiple args and one kwarg
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(40, 20, 55500, id=80)
+
+        self.assertEqual(r1.id, 40)
+        self.assertEqual(r1.width, 20)
+        self.assertEqual(r1.height, 55500)
+
+    def test_with_four_args_and_kwargs(self):
+        """ Test with multiple args and one kwarg
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(40, 20, 55500, 2394, id=80)
+
+        self.assertEqual(r1.id, 40)
+        self.assertEqual(r1.width, 20)
+        self.assertEqual(r1.height, 55500)
+        self.assertEqual(r1.x, 2394)
+
+    def test_with_five_args_and_kwargs(self):
+        """ Test with multiple args and one kwarg
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(40, 20, 55500, 2394, 7789, id=80)
+
+        self.assertEqual(r1.id, 40)
+        self.assertEqual(r1.width, 20)
+        self.assertEqual(r1.height, 55500)
+        self.assertEqual(r1.x, 2394)
+        self.assertEqual(r1.y, 7789)
+
+    def test_full_args_and_kwargs(self):
+        """ Test if all args and kwargs are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(666, 555, 444, 333, 222,
+                  id=66, width=55, height=44, x=33, y=22)
+
+        self.assertEqual(r1.id, 666)
+        self.assertEqual(r1.width, 555)
+        self.assertEqual(r1.height, 444)
+        self.assertEqual(r1.x, 333)
+        self.assertEqual(r1.y, 222)
