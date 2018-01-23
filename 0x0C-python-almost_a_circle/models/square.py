@@ -33,6 +33,8 @@ class Square(Rectangle):
         attrs_sq = ["id", "size", "x", "y"]
 
         for position_sq, var in enumerate(args):
+            if position_sq > (len(attrs_sq) - 1):
+                break
             setattr(self, attrs_sq[position_sq], var)
 
         if len(args) == 0:
