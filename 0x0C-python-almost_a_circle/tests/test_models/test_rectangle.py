@@ -214,6 +214,14 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle((3, 4), 4, 3, 2, 1)
         self.assertEqual(str(err.exception), "width must be an integer")
 
+    def test_string_width(self):
+        """ Test when width is passed a string
+        """
+
+        with self.assertRaises(TypeError) as err:
+            r1 = Rectangle("Penguin", 4, 3, 2, 1)
+        self.assertEqual(str(err.exception), "width must be an integer")
+
     def test_list_height(self):
         """ Test when height is passed a list
         """
@@ -244,6 +252,14 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError) as err:
             r1 = Rectangle(3, (4, 5), 3, 2, 1)
+        self.assertEqual(str(err.exception), "height must be an integer")
+
+    def test_string_height(self):
+        """ Test when height is passed a string
+        """
+
+        with self.assertRaises(TypeError) as err:
+            r1 = Rectangle(4, "Penguin", 3, 2, 1)
         self.assertEqual(str(err.exception), "height must be an integer")
 
     def test_list_x(self):
@@ -278,6 +294,14 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle(3, 4, (3, 2), 2, 1)
         self.assertEqual(str(err.exception), "x must be an integer")
 
+    def test_string_x(self):
+        """ Test when x is passed a string
+        """
+
+        with self.assertRaises(TypeError) as err:
+            r1 = Rectangle(4, 3, "Penguin", 2, 1)
+        self.assertEqual(str(err.exception), "x must be an integer")
+
     def test_list_y(self):
         """ Test when y is passed a list
         """
@@ -308,6 +332,14 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError) as err:
             r1 = Rectangle(3, 4, 3, (1, 2), 1)
+        self.assertEqual(str(err.exception), "y must be an integer")
+
+    def test_string_y(self):
+        """ Test when y is passed a string
+        """
+
+        with self.assertRaises(TypeError) as err:
+            r1 = Rectangle(4, 3, 2, "Penguin", 1)
         self.assertEqual(str(err.exception), "y must be an integer")
 
     def test_area(self):
@@ -644,3 +676,127 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.height, 444)
         self.assertEqual(r1.x, 333)
         self.assertEqual(r1.y, 222)
+
+    def test_too_many_args(self):
+        """ Test when a lot of args are passed
+        """
+
+        r1 = Rectangle(10, 10, 10, 10, 10)
+
+        r1.update(2, 2, 2, 2, 2, 666, 98, 23, 55, 900)
+
+        self.assertEqual(r1.id, 2)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 2)
+        self.assertEqual(r1.y, 2)
+
+    def test_rectangle_to_dictionary(self):
+        """ Test the to_dictionary method
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(10, 2, 1, 9)
+
+        expected_dict = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        r1_dictionary = r1.to_dictionary()
+
+        print(type(r1_dictionary))
+
+        self.assertEqual(r1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_rectangle_to_dictionary_two(self):
+        """ Test the to_dictionary method when only 2 var passed to rectangle
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(10, 8)
+
+        expected_dict = {'x': 0, 'y': 0, 'id': 1, 'height': 8, 'width': 10}
+        r1_dictionary = r1.to_dictionary()
+
+        print(type(r1_dictionary))
+
+        self.assertEqual(r1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_rectangle_to_dictionary_three(self):
+        """ Test the to_dictionary method when only 3 var passed to rectangle
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(10, 8, 3)
+
+        expected_dict = {'x': 3, 'y': 0, 'id': 1, 'height': 8, 'width': 10}
+        r1_dictionary = r1.to_dictionary()
+
+        print(type(r1_dictionary))
+
+        self.assertEqual(r1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_rectangle_to_dictionary_four(self):
+        """ Test the to_dictionary method when all var passed to rectangle
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(10, 8, 3, 5, 30)
+
+        expected_dict = {'x': 3, 'y': 5, 'id': 30, 'height': 8, 'width': 10}
+        r1_dictionary = r1.to_dictionary()
+
+        print(type(r1_dictionary))
+
+        self.assertEqual(r1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_rectangle_to_dictionary_five(self):
+        """ Test the to_dictionary method when all var passed to rectangle
+            and the Rectangle is update with the update method
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(10, 8, 3, 5, 30)
+
+        expected_dict = {'x': 3, 'y': 5, 'id': 30, 'height': 8, 'width': 10}
+        r1_dictionary = r1.to_dictionary()
+
+        print(type(r1_dictionary))
+
+        self.assertEqual(r1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        new_dict = {'x': 3, 'y': 5, 'id': 333, 'height': 8, 'width': 10}
+        r1.update(id=333)
+
+        r1_dict2 = r1.to_dictionary()
+
+        self.assertEqual(r1_dict2, new_dict)
+
+        sys.stdout = sys.__stdout__
+
+
