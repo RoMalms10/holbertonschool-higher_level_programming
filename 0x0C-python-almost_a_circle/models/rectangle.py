@@ -44,6 +44,8 @@ class Rectangle(Base):
         attrs = ["id", "width", "height", "x", "y"]
 
         for position, var in enumerate(args):
+            if position > (len(attrs) - 1):
+                break
             setattr(self, attrs[position], var)
 
         if len(args) == 0:
