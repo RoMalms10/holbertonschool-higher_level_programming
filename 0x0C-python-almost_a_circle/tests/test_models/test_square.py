@@ -432,3 +432,112 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.size, 6)
         self.assertEqual(s1.x, 6)
         self.assertEqual(s1.y, 6)
+
+    def test_square_to_dictionary_one(self):
+        """ Test the to_dictionary method in square
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        s1 = Square(10)
+
+        expected_dict = {'x': 0, 'y': 0, 'id': 1, 'size': 10}
+        s1_dictionary = s1.to_dictionary()
+
+        print(type(s1_dictionary))
+
+        self.assertEqual(s1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_square_to_dictionary_two(self):
+        """ Test the to_dictionary method in square
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        s1 = Square(10, 2)
+
+        expected_dict = {'x': 2, 'y': 0, 'id': 1, 'size': 10}
+        s1_dictionary = s1.to_dictionary()
+
+        print(type(s1_dictionary))
+
+        self.assertEqual(s1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_square_to_dictionary_three(self):
+        """ Test the to_dictionary method in square
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        s1 = Square(10, 2, 1)
+
+        expected_dict = {'x': 2, 'y': 1, 'id': 1, 'size': 10}
+        s1_dictionary = s1.to_dictionary()
+
+        print(type(s1_dictionary))
+
+        self.assertEqual(s1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_square_to_dictionary_four(self):
+        """ Test the to_dictionary method in square
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        
+        Base._Base__nb_objects = 0
+        s1 = Square(10, 2, 1, 50)
+
+        expected_dict = {'x': 2, 'y': 1, 'id': 50, 'size': 10}
+        s1_dictionary = s1.to_dictionary()
+
+        print(type(s1_dictionary))
+
+        self.assertEqual(s1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        sys.stdout = sys.__stdout__
+
+    def test_square_to_dictionary_five(self):
+        """ Test the to_dictionary method when all var passed to square
+            and the square is updated with the update method
+        """
+
+        
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+                    
+        Base._Base__nb_objects = 0
+        s1 = Square(10, 2, 1, 50)
+
+        expected_dict = {'x': 2, 'y': 1, 'id': 50, 'size': 10}
+        s1_dictionary = s1.to_dictionary()
+
+        print(type(s1_dictionary))
+
+        self.assertEqual(s1_dictionary, expected_dict)
+        self.assertEqual(capturedOutput.getvalue(), "<class 'dict'>\n")
+
+        new_dict = {'x': 2, 'y': 1, 'id': 333, 'size': 10}
+        s1.update(id=333)
+
+        s1_dict2 = s1.to_dictionary()
+
+        self.assertEqual(s1_dict2, new_dict)
+
+        sys.stdout = sys.__stdout__
