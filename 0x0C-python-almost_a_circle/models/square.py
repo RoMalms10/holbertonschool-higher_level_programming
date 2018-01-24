@@ -12,11 +12,10 @@ class Square(Rectangle):
         """ Initialize an instance of a square
 
         Args:
-            width (int): width of the rectangle
-            height (int): height of the rectangle
-            x (int): how much to shift the rectangle when printing
-            y (int): how much to shift the rectangle when printing
-            id (int): number of instances of rectangles
+            size (int): size of the square
+            x (int): how much to shift the square when printing
+            y (int): how much to shift the square when printing
+            id (int): number of instances of squares
         """
 
         super().__init__(size, size, x, y, id)
