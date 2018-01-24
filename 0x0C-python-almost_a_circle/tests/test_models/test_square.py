@@ -29,7 +29,7 @@ class TestSquare(unittest.TestCase):
     def test_size(self):
         """ Test correct size being set
         """
-        
+
         s1 = Square(10, 2)
         s2 = Square(666, 333)
 
@@ -48,7 +48,7 @@ class TestSquare(unittest.TestCase):
         """
 
         s1 = Square(10, 3)
-        
+
         self.assertEqual(s1.size, 10)
         self.assertEqual(s1.x, 3)
 
@@ -439,7 +439,7 @@ class TestSquare(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         s1 = Square(10)
 
@@ -459,7 +459,7 @@ class TestSquare(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         s1 = Square(10, 2)
 
@@ -479,7 +479,7 @@ class TestSquare(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         s1 = Square(10, 2, 1)
 
@@ -499,7 +499,7 @@ class TestSquare(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         s1 = Square(10, 2, 1, 50)
 
@@ -518,10 +518,9 @@ class TestSquare(unittest.TestCase):
             and the square is updated with the update method
         """
 
-        
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-                    
+
         Base._Base__nb_objects = 0
         s1 = Square(10, 2, 1, 50)
 
