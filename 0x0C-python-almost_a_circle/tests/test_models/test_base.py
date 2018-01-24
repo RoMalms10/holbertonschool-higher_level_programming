@@ -57,7 +57,7 @@ class TestBase(unittest.TestCase):
 
         instances = [b1, b2, b3, b4]
         position = 0
-        
+
         for i in range(100, 500, 100):
             instances[position].id = i
             self.assertEqual(instances[position].id, i)
@@ -145,13 +145,13 @@ class TestBase(unittest.TestCase):
         """ Test if from_json_string method works on Rectangle
         """
 
-        list_input = [{'id': 89, 'width': 10, 'height': 4}, 
+        list_input = [{'id': 89, 'width': 10, 'height': 4},
                       {'id': 7, 'width': 1, 'height': 7}]
 
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
 
-        expected = [{"height": 4, "width": 10, "id": 89}, 
+        expected = [{"height": 4, "width": 10, "id": 89},
                     {"height": 7, "width": 1, "id": 7}]
 
         self.assertEqual(list_output, expected)
@@ -160,7 +160,7 @@ class TestBase(unittest.TestCase):
         """ Test if from_json_string method works on Square
         """
 
-        list_input = [{'id': 89, 'size': 10}, 
+        list_input = [{'id': 89, 'size': 10},
                       {'id': 7, 'size': 1}]
 
         json_list_input = Square.to_json_string(list_input)
