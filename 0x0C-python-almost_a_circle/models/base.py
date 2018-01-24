@@ -61,7 +61,7 @@ class Base:
             class.
 
         Args:
-            list_objs (list of objects): objects to turn into 
+            list_objs (list of objects): objects to turn into
         """
 
         filename = "{}.json".format(cls.__name__)
@@ -70,7 +70,7 @@ class Base:
         if list_objs is not None:
             for obj in list_objs:
                 obj_list += [obj.to_dictionary()]
-        
+
         json_list = Base.to_json_string(obj_list)
 
         with open(filename, "w+", encoding="UTF-8") as f:
@@ -107,7 +107,7 @@ class Base:
                 raw_json = f.read()
             list_of_dicts = cls.from_json_string(raw_json)
             for d in list_of_dicts:
-               instance_list += [cls.create(**d)]
+                instance_list += [cls.create(**d)]
         except FileNotFoundError:
             pass
         return instance_list

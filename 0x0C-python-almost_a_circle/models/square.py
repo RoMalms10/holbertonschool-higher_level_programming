@@ -21,7 +21,6 @@ class Square(Rectangle):
 
         super().__init__(size, size, x, y, id)
 
-
     def update(self, *args, **kwargs):
         """ Updates attributes of a square
 
@@ -45,7 +44,7 @@ class Square(Rectangle):
         """ Returns the informal representation of the Square
         """
 
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, 
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.size)
 
     def to_dictionary(self):
@@ -74,6 +73,6 @@ class Square(Rectangle):
         Args:
             value (int): the value to assign to width/height
         """
-        
+
         self.width = value
         self.height = value

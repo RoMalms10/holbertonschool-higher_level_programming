@@ -32,7 +32,6 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
 
-
     def update(self, *args, **kwargs):
         """ Updates attributes of the Rectangle
 
@@ -40,7 +39,7 @@ class Rectangle(Base):
             args (non-keyword arguments): non-specified amount of arguments
             kwargs (key-word arguments): non-specified amount of arguments
         """
-        
+
         attrs = ["id", "width", "height", "x", "y"]
 
         for position, var in enumerate(args):
