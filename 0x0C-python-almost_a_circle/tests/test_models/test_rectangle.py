@@ -28,7 +28,7 @@ class TestRectangle(unittest.TestCase):
     def test_width(self):
         """ Test correct width being set
         """
-        
+
         r1 = Rectangle(10, 2)
         r2 = Rectangle(666, 333)
 
@@ -361,15 +361,15 @@ class TestRectangle(unittest.TestCase):
         """
 
         display = "##\n##\n##\n"
-        capturedOutput = io.StringIO() #Create StringIO Object
-        sys.stdout = capturedOutput #Redirect stdout
+        capturedOutput = io.StringIO()  # Create StringIO Object
+        sys.stdout = capturedOutput  # Redirect stdout
 
         r1 = Rectangle(2, 3)
 
-        r1.display() #Call Function
-        self.assertEqual(capturedOutput.getvalue(), display) #use .getvalue
+        r1.display()  # Call Function
+        self.assertEqual(capturedOutput.getvalue(), display)  # use .getvalue
 
-        sys.stdout = sys.__stdout__ #Reset redirect
+        sys.stdout = sys.__stdout__  # Reset redirect
 
     def test_dunder_str(self):
         """ Test if __str__ is returning the correct string
@@ -405,7 +405,7 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
 
     def test_display_number_one_larger(self):
-        """ Test if a larger display works 
+        """ Test if a larger display works
         """
 
         display = " ####\n ####\n ####\n"
@@ -562,7 +562,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.id, 900)
         self.assertEqual(r1.width, 30)
 
-
     def test_update_with_three_kwargs(self):
         """ Test if 3 kwargs are passed
         """
@@ -697,7 +696,7 @@ class TestRectangle(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 2, 1, 9)
 
@@ -717,7 +716,7 @@ class TestRectangle(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 8)
 
@@ -737,7 +736,7 @@ class TestRectangle(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 8, 3)
 
@@ -757,7 +756,7 @@ class TestRectangle(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 8, 3, 5, 30)
 
@@ -778,7 +777,7 @@ class TestRectangle(unittest.TestCase):
 
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
-        
+
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 8, 3, 5, 30)
 
@@ -798,5 +797,3 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1_dict2, new_dict)
 
         sys.stdout = sys.__stdout__
-
-
