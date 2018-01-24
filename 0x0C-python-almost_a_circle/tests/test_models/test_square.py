@@ -62,6 +62,22 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.x, 3)
         self.assertEqual(s1.y, 2)
 
+    def test_square_with_negative_x(self):
+        """ Test when x is passed a negative number
+        """
+
+        with self.assertRaises(ValueError) as err:
+            s1 = Square(1, -2)
+        self.assertEqual(str(err.exception), "x must be >= 0")
+
+    def test_square_with_negative_y(self):
+        """ Test when y is passed a negative number
+        """
+
+        with self.assertRaises(ValueError) as err:
+            s1 = Square(1, 2, -3)
+        self.assertEqual(str(err.exception), "y must be >= 0")
+
     def test_with_all_arguments(self):
         """ Test when size, x, y and id are passed
         """
