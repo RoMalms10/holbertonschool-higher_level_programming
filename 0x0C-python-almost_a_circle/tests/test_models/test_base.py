@@ -141,6 +141,31 @@ class TestBase(unittest.TestCase):
         os.remove("./Rectangle.json")
         os.remove("./Square.json")
 
+    def test_save_to_file_three(self):
+        """ Test if save_to_file method can handle None
+        """
+
+        r1_dictionary = []
+        s1_dictionary = []
+
+        Rectangle.save_to_file(None)
+        Square.save_to_file(None)
+
+        with open("Rectangle.json", "r") as file1:
+            r1_file_dict = file1.read()
+
+        with open("Square.json", "r") as file2:
+            s1_file_dict = file2.read()
+
+        r1_file_dict = json.loads(r1_file_dict)
+        s1_file_dict = json.loads(s1_file_dict)
+
+        self.assertEqual(r1_file_dict, r1_dictionary)
+        self.assertEqual(s1_file_dict, s1_dictionary)
+
+        os.remove("./Rectangle.json")
+        os.remove("./Square.json")
+
     def test_from_json_string_one(self):
         """ Test if from_json_string method works on Rectangle
         """
