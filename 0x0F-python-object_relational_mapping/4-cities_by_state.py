@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' This module queries a TABLE and filters out information based on input
+''' This module queries cities TABLE and joins it with states
 '''
 
 
