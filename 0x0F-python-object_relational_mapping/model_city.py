@@ -3,6 +3,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
+
 class City(Base):
     """ Class City that inherits from Base and
         links to a table named cities
