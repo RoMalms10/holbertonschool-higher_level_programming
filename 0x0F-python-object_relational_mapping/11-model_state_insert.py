@@ -16,6 +16,7 @@ if __name__ == "__main__":
 
     new_state = State(name="Louisiana")
     session.add(new_state)
+    session.commit()
     for state in session.query(State).order_by(State.id)[-1:]:
         print("{}".format(state.id))
     session.close()
