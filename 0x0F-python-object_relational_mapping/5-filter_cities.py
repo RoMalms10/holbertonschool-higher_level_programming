@@ -20,6 +20,7 @@ if __name__ == "__main__":
     query = cur.fetchall()
     for row in range(len(query) - 1):
         print(query[row][0], end=", ")
-    print(query[row + 1][0])
+    if query:
+        print(query[row + 1][0])
     cur.close()
     db.close()
