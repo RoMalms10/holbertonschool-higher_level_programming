@@ -22,7 +22,7 @@ if __name__ == "__main__":
         if row != len(query) - 1:
             print(query[row][0], end=", ")
         else:
-            print(query[row][0]i, end="")
+            print(query[row][0], end="")
     print()
     cur.close()
     db.close()
