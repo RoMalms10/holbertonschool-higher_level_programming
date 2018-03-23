@@ -16,6 +16,7 @@ if __name__ == "__main__":
                  ORDER BY id ASC")
     query = cur.fetchall()
     for row in query:
-        print(row)
+        if (row[1][0] == 'N'):
+            print(row)
     cur.close()
     db.close()
