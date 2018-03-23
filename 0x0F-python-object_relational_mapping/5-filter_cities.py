@@ -18,9 +18,10 @@ if __name__ == "__main__":
                  WHERE states.name=%s \
                  ORDER BY cities.id ASC", (argv[4], ))
     query = cur.fetchall()
-    for row in range(len(query) - 1):
-        print(query[row][0], end=", ")
-    if query:
-        print(query[row + 1][0])
+    for row in range(len(query)):
+        if row != len(query) - 1:
+            print(query[row][0], end=", ")
+        else:
+            print(query[row][0])
     cur.close()
     db.close()
