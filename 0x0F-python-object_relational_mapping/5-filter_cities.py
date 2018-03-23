@@ -15,7 +15,8 @@ if __name__ == "__main__":
                  FROM cities \
                  INNER JOIN states \
                  ON cities.state_id = states.id \
-                 WHERE states.name=%s", (argv[4], ))
+                 WHERE states.name=%s \
+                 ORDER BY cities.id ASC", (argv[4], ))
     query = cur.fetchall()
     for row in range(len(query) - 1):
         print(query[row][0], end=", ")
