@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""
+""" Finds the highest peak in a list passed
 """
 
 
 def find_peak(list_of_integers):
-    """
+    """ Finds the highest peak in list of integers
     """
     if list_of_integers:
         beg = 0
