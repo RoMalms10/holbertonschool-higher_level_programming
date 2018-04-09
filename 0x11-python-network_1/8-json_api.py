@@ -8,7 +8,7 @@ from sys import argv
 
 if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
-    if argv[1]:
+    if len(argv) > 1:
         q = argv[1]
     else:
         q=""
@@ -16,6 +16,11 @@ if __name__ == "__main__":
     values = {'q': q}
 
     req = requests.post(url, data=values)
-    print(req)
-    req = req.json
-    print(req)
+    try:
+        data = req.json()
+        if len(data) == 0:
+            print("No result")
+        else:
+            print("[{}] {}".format(data['id'], data['name']))
+    except ValueError as e:
+        print("Not a valid JSON")
