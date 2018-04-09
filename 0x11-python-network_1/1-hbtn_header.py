@@ -7,9 +7,5 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    url = argv[1]
-    req = urllib.request.Request(url)
-    with urllib.request.urlopen(req) as response:
-        page = response.info()
-    page = dict(page)
-    print(page['X-Request-Id'])
+    with urllib.request.urlopen(argv[1]) as response:
+        print(response.headers.get('X-Request-Id'))
