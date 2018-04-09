@@ -8,5 +8,4 @@ from sys import argv
 if __name__ == "__main__":
     url = argv[1]
     req = requests.get(url)
-    req = dict(req.headers)
-    print(req['x-request-id'])
+    print(req.headers['x-request-id'])
