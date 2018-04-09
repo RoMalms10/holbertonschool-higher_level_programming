@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     req = requests.get(full_url)
     data = req.json()
-    
+
     print("Number of results: {}".format(data['count']))
 
     people_list = data['results']
