@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 """ Module that handles errors if they occur during a URL request
 """
 import requests
