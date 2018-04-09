@@ -7,8 +7,8 @@ from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
-    try:
-        req = requests.get(url)
+    req = requests.get(url)
+    if req.status_code < 400:
         print(req.text)
-    except requests.exception.RequestException as e:
-        print("Error code: {}".format(e))
+    else:
+        print("Error code: {}".format(req.status_code))
