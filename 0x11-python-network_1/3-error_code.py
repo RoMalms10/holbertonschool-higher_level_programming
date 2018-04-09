@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Module that takes in a URL and sends a request
 """
-import urllib.response
+import urllib.request
 from sys import argv
 
 
@@ -10,6 +10,7 @@ if __name__ == "__main__":
     req = urllib.request.Request(url)
     try:
         with urllib.request.urlopen(req) as response:
-            print(response.read())
+            resp = response.read()
+            print(resp.decode('utf-8'))
     except urllib.error.HTTPError as e:
         print("Error Code: {}".format(e.code))
