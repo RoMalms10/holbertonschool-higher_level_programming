@@ -16,5 +16,4 @@ if __name__ == "__main__":
     for index in range(0, 10):
         sha = commit_list[index].get('sha')
         author_name = commit_list[index].get('commit').get('author').get('name')
-        print(author_name)
         print("{}: {}".format(sha, author_name))
