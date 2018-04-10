@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     resp = requests.get(url)
     commit_list = resp.json()
-    for index in range(0, 10):
-        sha = commit_list[index].get('sha')
-        author_name = commit_list[index].get('commit').get('author').get('name')
+    for commit in commit_list[:10]:
+        sha = commit.get('sha')
+        author_name = commit.get('commit').get('author').get('name')
         print("{}: {}".format(sha, author_name))
