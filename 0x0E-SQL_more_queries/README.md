@@ -10,4 +10,4 @@ To learn more about MySQL queries and databases
 
 ## How To Use
 1) `cat [file name] | mysql -uroot -p`
-2) Type in the password
+2) Type in the password to mysql `root` user
