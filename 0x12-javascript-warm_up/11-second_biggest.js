@@ -10,6 +10,8 @@ if (process.argv.length < 4) {
     if (process.argv[i] > highest) {
       secondhighest = highest;
       highest = process.argv[i];
+    } else if (highest > process.argv[i] && process.argv[i] > secondhighest) {
+      secondhighest = process.argv[i];
     }
   }
   console.log(secondhighest);
