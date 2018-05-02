@@ -2,7 +2,7 @@
 
 # High-Level Programming Solutions by [Robert Malmstein](https://twitter.com/robertmalmstein)
 
-**Welcome to Low-Level Programming!**
+**Welcome to High-Level Programming!**
 
 This repository contains assignment solutions from the high-level programming 
 track at [Holberton School](https://www.holbertonschool.com).
