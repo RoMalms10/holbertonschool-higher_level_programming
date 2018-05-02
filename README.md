@@ -1,6 +1,6 @@
 <img src="https://www.holbertonschool.com/assets/holberton-logo-1cc451260ca3cd297def53f2250a9794810667c7ca7b5fa5879a569a457bf16f.png" alt="Holberton logo">
 
-# Low-Level Programming Solutions by [David Yoon](https://twitter.com/daveyoon64)
+# High-Level Programming Solutions by [Robert Malmstein](https://twitter.com/robertmalmstein)
 
 **Welcome to Low-Level Programming!**
 
@@ -26,6 +26,6 @@ gcc -Wall -Werror -Wextra -pedantic main.##.c ##-name.c
 ## Author
 **David Yoon**
 * Full Stack Software Engineer in-training at [Holberton School](https://holbertonschool.com)
-* [Linkedin](www.linkedin.com/in/daveyoon64)
-* [Twitter](https://twitter.com/daveyoon64)
-* [Website](https://www.daveyoon64.com)
+* [Linkedin](www.linkedin.com/in/robert-malmstein)
+* [Twitter](https://twitter.com/robertmalmstein)
+* [Medium](https://medium.com/@romalms10)
