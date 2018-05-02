@@ -4,7 +4,7 @@
 
 **Welcome to Low-Level Programming!**
 
-This repository contains assignment solutions from the low-level programming 
+This repository contains assignment solutions from the high-level programming 
 track at [Holberton School](https://www.holbertonschool.com).
 
 **Whats in here?**
@@ -24,7 +24,7 @@ gcc -Wall -Werror -Wextra -pedantic main.##.c ##-name.c
 ```
 
 ## Author
-**David Yoon**
+**Robert Malmstein**
 * Full Stack Software Engineer in-training at [Holberton School](https://holbertonschool.com)
 * [Linkedin](www.linkedin.com/in/robert-malmstein)
 * [Twitter](https://twitter.com/robertmalmstein)
