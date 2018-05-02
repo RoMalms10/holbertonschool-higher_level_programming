@@ -10,3 +10,8 @@ To learn Javascript basics and syntax
 - Learn how to accept and manipulate command line arguments
 - Learn how to write functions
 - Learn types of variables
+
+## How To Use
+```
+./[filename] [optional arguments, ...]
+```
