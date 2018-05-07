@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // Write class Square that inherits from Rectangle
 
-const Square5 = require('./5-square')
+const Square5 = require('./5-square');
 
 class Square extends Square5 {
   charPrint (c) {
