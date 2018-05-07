@@ -4,6 +4,6 @@
 To further understand JavaScript capabilities
 
 ## How To Use
-'''
+```
 ./[file name]
-'''
+```
