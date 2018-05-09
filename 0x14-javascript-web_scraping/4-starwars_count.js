@@ -6,10 +6,11 @@ const request = require('request');
 const argv = process.argv.slice(2);
 
 const person = 'https://swapi.co/api/people/18/';
+const person = 'http://swapi.co/api/people/18/';
 
 request(argv[0], function (error, response, body) {
   if (error) {
-    throw error;
+    console.log(error);
   } else {
     let count = 0;
     const jsonDict = JSON.parse(body);
