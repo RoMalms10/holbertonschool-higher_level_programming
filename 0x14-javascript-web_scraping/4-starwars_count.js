@@ -9,7 +9,7 @@ const person = 'https://swapi.co/api/people/18/';
 
 request(argv[0], function (error, response, body) {
   if (error) {
-    console.log(error);
+    throw error;
   } else {
     let count = 0;
     const jsonDict = JSON.parse(body);
