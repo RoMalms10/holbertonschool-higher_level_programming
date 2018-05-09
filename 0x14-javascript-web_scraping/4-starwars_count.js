@@ -16,7 +16,7 @@ request(argv[0], function (error, response, body) {
     const jsonDict = JSON.parse(body);
     const listMovies = jsonDict['results'];
     for (let i = 0; i < listMovies.length; i++) {
-      if (listMovies[i]['characters'].includes(person)) count++;
+      if (listMovies[i]['characters'].includes(person1)) count++;
     }
     console.log(count);
   }
