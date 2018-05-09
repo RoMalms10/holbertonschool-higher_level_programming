@@ -5,8 +5,8 @@ const request = require('request');
 
 const argv = process.argv.slice(2);
 
-const person = 'https://swapi.co/api/people/18/';
-const person = 'http://swapi.co/api/people/18/';
+const person1 = 'https://swapi.co/api/people/18/';
+const person2 = 'http://swapi.co/api/people/18/';
 
 request(argv[0], function (error, response, body) {
   if (error) {
